@@ -110,8 +110,24 @@ nav ul li a {
 .about, .projects, .contact {
    padding: 50px;
    text-align: center;
+   color: white;
+   background-color: black;
 }
+.ab {
+   height: 5cm;
+   width: 35cm;
+   background-color: #25252e;
+   border: 1px solid #25252e;
+   box-shadow: 5px 7px 4px green;
+   color: #b4bd99;
 
+}
+.ab:hover{
+   height: 5.2cm;
+   width: 35.3cm;
+   transition: 1s;
+   box-shadow: 5px 7px 4px rgb(193, 196, 14);
+}
 .about h2, .projects h2, .contact h2 {
    margin-bottom: 20px;
 }
@@ -159,7 +175,8 @@ footer {
 }
 .h:hover {
    color: rgb(222 11 222);
-   transform: skew(358deg);
+   transform: skew(3deg);
+   transition: .3s;
 }
 @keyframes h {
    form{
