@@ -120,6 +120,7 @@ nav ul li a {
    border: 1px solid #25252e;
    box-shadow: 5px 7px 4px green;
    color: #b4bd99;
+   border-radius: 1cm;
 
 }
 .ab:hover{
@@ -131,7 +132,10 @@ nav ul li a {
 .about h2, .projects h2, .contact h2 {
    margin-bottom: 20px;
 }
-
+.project{
+   background-color: #141416;
+   color: wheat;
+}
 .project-grid {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -140,9 +144,14 @@ nav ul li a {
 
 .project-card {
    padding: 20px;
-   background-color: #f5f5f5;
+   background-color: #25252e;
    border-radius: 8px;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   box-shadow: 5px 7px 4px rgb(85 227 12 / 35%);
+}
+.project-card:hover{
+   transform: scale(103%);
+   transition: 1s;
+   box-shadow: 5px 7px 4px #ffd7008a;
 }
 
 .contact form {
