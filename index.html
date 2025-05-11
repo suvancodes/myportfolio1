@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suvankar Payra | Portfolio</title>
-  <link rel="stylesheet" href="sub.css">
+  <link rel="stylesheet" href="sub.css" />
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Suvankar Payra</div>
       <ul>
-        <li><a href="#about" class="l1">About</a></li>
-        <li><a href="#projects" class="l2">Projects</a></li>
-        <li><a href="#contact" class="l3">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1 class="h">Hello, I'm Suvankar Payra</h1>
-    <p class="h">A web developer</p>
+    <h1>Hello, I'm Suvankar Payra</h1>
+    <p>A web developer</p>
     <a href="#projects" class="btn">See My Work</a>
   </section>
 
-  <section id="about" class="about">
+  <section id="about" class="about fade-in-up">
     <div class="ab">
       <h2>About Me</h2>
-      <p>HEY I AM SUVANKAR PAYRA I WII STADY IN KAZI NAZRUL UNIVERSITY ASANSOL(GOVT.)</p>
-      <br>
-      <p>I AM A WEB DEVELOPER SPECLIALIZING IN CREATING EXCEPTIONAL DIGITAL EXPERIENCES. I HAVE A PASSION FOR BUILDING WEBSITE THAT IMPROVE USER EXPERIENCES.</p>
-      <br>
-      <p>I am use guthub and my account name is <a href="https://github.com/suvancodes">SUVANKAR404ERROR</a></p>
-      <p>Also you can find me in <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/">GEEKSFORGEEKS</a>, my account name is <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/">SUVANKAR_4_0_4ERROR</a> and my college rank is <a href="https://www.geeksforgeeks.org/colleges/kazi-nazrul-university/students/">10</a>. I will try to improve my rank.</p>
+      <p>I am studying at Kazi Nazrul University Asansol (Govt.).</p>
+      <p>I am a web developer passionate about creating great user experiences.</p>
+      <p>GitHub: <a href="https://github.com/suvancodes">SUVANKAR404ERROR</a></p>
+      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/">SUVANKAR_4_0_4ERROR</a></p>
+      <p>LeetCode: <a href="https://leetcode.com/u/q72R2lM0tr/">subhocodes</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/suvankarpayra/">Suvankar Payra</a></p>
     </div>
   </section>
 
-  <section id="projects" class="project">
+  <section id="skills" class="skills fade-in-up">
+    <div class="skill-box">
+      <h2>My Skills</h2>
+      <div class="skills-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>python (basic)</span>
+        <span>C (basic)</span>
+        <span>C++ (DSA)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="project fade-in-up">
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <h3>Project 1</h3>
-        <p>I was maked my first as a <a href="book.html">bookmark website</a></p>
+        <h3>Bookmark Website</h3>
+        <p><a href="book.html">Visit Bookmark Site</a></p>
       </div>
       <div class="project-card">
-        <h3>Project 2</h3>
-        <p>An e-commerce platform built with React.</p>
+        <h3>E-commerce Platform</h3>
+        <p>An e-commerce site built with React.</p>
       </div>
       <div class="project-card">
-        <h3>Project 3</h3>
-        <p>I MADE A PORTFOLIO WEBSITE <a href="https://suvankar404error.github.io/myportfolio1/">suvankar404error.github.io/myportfolio1/</a></p>
+        <h3>Portfolio Website</h3>
+        <p><a href="https://suvancodes.github.io/myportfolio1/">Visit Portfolio</a></p>
       </div>
     </div>
   </section>
@@ -58,8 +73,8 @@
     <div class="contactstyle">
       <h2>Contact</h2>
       <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
@@ -69,35 +84,42 @@
   <footer>
     <p>© 2025 Suvankar Payra. All rights reserved.</p>
   </footer>
-  
+
+  <!-- Confetti Script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
+    // Confetti on page load
     window.onload = () => {
       const duration = 2 * 1000;
       const end = Date.now() + duration;
 
       (function frame() {
-        confetti({
-          particleCount: 7,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 }
-        });
-        confetti({
-          particleCount: 7,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 }
-        });
+        confetti({ particleCount: 7, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 7, angle: 120, spread: 55, origin: { x: 1 } });
 
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
+        if (Date.now() < end) requestAnimationFrame(frame);
       })();
     };
-  </script>
 
-  <script src="script.js"></script>
+    // Fade-in animation on scroll
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2
+      }
+    );
+
+    document.querySelectorAll('.fade-in-up').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
 
