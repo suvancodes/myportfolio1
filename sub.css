@@ -82,6 +82,7 @@ nav ul li a {
    text-align: center;
    color: rgb(227, 21, 62);
    background-image: radial-gradient(#1d1d1f, #656567f2, #161816);
+}
 
 .hero h1 {
    font-size: 3em;
@@ -207,3 +208,4 @@ footer {
 a{
    color: #ffde00db;
 }
+
