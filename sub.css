@@ -81,8 +81,7 @@ nav ul li a {
    /* background: url('hero-bg.jpg') no-repeat center center/cover; */
    text-align: center;
    color: rgb(227, 21, 62);
-   background-image: background-image: radial-gradient(#1d1d1f, #656567f2, #161816);
-}
+   background-image: radial-gradient(#1d1d1f, #656567f2, #161816);
 
 .hero h1 {
    font-size: 3em;
