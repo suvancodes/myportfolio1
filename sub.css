@@ -145,6 +145,7 @@ nav ul li a {
     transform: scale(108%);
     background-color: #000000;
     color: #27c946;
+    border: 1px solid #27c946;
     
 }
 .suvankar-skill{
