@@ -92,6 +92,8 @@ nav ul li a {
 
 .ab:hover, .skill-box:hover {
   box-shadow: 5px 7px 4px rgb(193, 196, 14);
+  transform: scale(102%);
+  /* transform: scaley(102%); */
 }
 
 .skills-list {
