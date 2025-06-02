@@ -31,7 +31,7 @@
       <p>I am studying at Kazi Nazrul University Asansol (Govt.).</p>
       <p>I am a web developer passionate about creating great user experiences.</p>
       <p>GitHub: <a href="https://github.com/suvancodes" style="color:#00ffff;">SUVANKAR404ERROR</a></p>
-      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/" style="color:#00ffff; ">SUVANKAR_4_0_4ERROR</a></p>
+      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/" style="color:#00ffff;">SUVANKAR_4_0_4ERROR</a></p>
       <p>LeetCode: <a href="https://leetcode.com/u/q72R2lM0tr/" style="color:#00ffff;">subhocodes</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/suvankarpayra/" style="color:#00ffff;">Suvankar Payra</a></p>
     </div>
@@ -55,9 +55,9 @@
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <h3>Clone Of Netflix</h3>
+        <h3>Bookmark Website</h3>
         <p>A responsive front-end clone of Netflix’s homepage built with HTML and CSS. Designed to replicate the UI and layout for practice purposes.
-          <a href="https://clone-of-netflix-one.vercel.app/ " style="color:#00ffff; text-decoration: underline; display: block;">view project</a>
+          <a href="https://clone-of-netflix-one.vercel.app/ " style="color:#00ffff; text-decoration: underline;">view project</a>
         </p>
       </div>
       <div class="project-card">
@@ -79,10 +79,12 @@
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <button id="btn" type="submit">Send Message</button>
+        
       </form>
     </div>
   </section>
+  
 
   <footer>
     <p>© 2025 Suvankar Payra. All rights reserved.</p>
@@ -119,6 +121,12 @@
       observer.observe(section);
     });
   </script>
+  <script>
+          let btn = document.getElementById("btn")
+          btn.addEventListener("click" , ()=>{
+            alert("The contact form is currently under development. In the meantime, feel free to reach out to me directly at 6295199077.")
+          })
+          
+  </script>
 </body>
 </html>
-
