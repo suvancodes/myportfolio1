@@ -56,15 +56,15 @@
       -webkit-text-fill-color: transparent;
     }
 
-    nav a {
-      margin-left: 24px;
+    nav .links a {
+      margin-left: 22px;
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: 0.25s;
     }
 
-    nav a:hover {
+    nav .links a:hover {
       color: var(--cyan);
     }
 
@@ -114,7 +114,6 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* ---------- ABOUT ---------- */
     .about p {
       max-width: 780px;
       font-size: 1.05rem;
@@ -183,7 +182,6 @@
       text-decoration: none;
       margin-right: 18px;
       color: var(--amber);
-      transition: 0.2s;
     }
 
     .project a:hover {
@@ -200,7 +198,17 @@
       background: #070b18;
     }
 
-    /* ---------- RESPONSIVE ---------- */
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.85rem;
+    }
+
+    footer a:hover {
+      color: var(--pink);
+    }
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 2.3rem;
@@ -214,10 +222,13 @@
 <header>
   <nav>
     <strong>Suvankar Payra</strong>
-    <div>
+    <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="https://github.com/suvancodes" target="_blank">GitHub</a>
+      <a href="https://www.geeksforgeeks.org/user/Suvankar_4_0_4Error/" target="_blank">GeeksforGeeks</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">LinkedIn</a>
     </div>
   </nav>
 </header>
@@ -286,7 +297,10 @@
 </section>
 
 <footer>
-  © 2026 Suvankar Payra
+  © 2026 Suvankar Payra |
+  <a href="https://github.com/suvancodes" target="_blank">GitHub</a>
+  <a href="https://www.geeksforgeeks.org/user/Suvankar_4_0_4Error/" target="_blank">GeeksforGeeks</a>
+  <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">LinkedIn</a>
 </footer>
 
 <script>
