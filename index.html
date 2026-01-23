@@ -3,130 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suvankar Payra | Portfolio</title>
-  <link rel="stylesheet" href="sub.css" />
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">Suvankar Payra</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <title>Suvankar Payra | ML Portfolio</title>
 
-  <section class="hero">
-    <h1>Hello, I'm Suvankar Payra</h1>
-    <p>A web developer</p>
-    <a href="#projects" class="btn">See My Work</a>
-  </section>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  <section id="about" class="about fade-in-up">
-    <div class="ab">
-      <h2>About Me</h2>
-      <p>I am studying at Kazi Nazrul University Asansol (Govt.).</p>
-      <p>I am a web developer passionate about creating great user experiences.</p>
-      <p>GitHub: <a href="https://github.com/suvancodes" style="color:#00ffff;">SUVANKAR404ERROR</a></p>
-      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/suvankar_4_0_4error/" style="color:#00ffff;">SUVANKAR_4_0_4ERROR</a></p>
-      <p>LeetCode: <a href="https://leetcode.com/u/q72R2lM0tr/" style="color:#00ffff;">subhocodes</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/suvankarpayra/" style="color:#00ffff;">Suvankar Payra</a></p>
-    </div>
-  </section>
+    body {
+      color: #222;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
 
-  <section id="skills" class="skills fade-in-up">
-    <div class="skill-box">
-      <h2>My Skills</h2>
-      <div class="skills-list">
-        <span class="suvankar-skill">HTML</span>
-        <span class="suvankar-skill">CSS</span>
-        <span class="suvankar-skill">JavaScript</span>
-        <span class="suvankar-skill">python (basic)</span>
-        <span class="suvankar-skill">C (basic)</span>
-        <span class="suvankar-skill">C++ (DSA)</span>
-      </div>
-    </div>
-  </section>
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 40px;
+    }
 
-  <section id="projects" class="project fade-in-up">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Clone of Netflix</h3>
-        <p>A responsive front-end clone of Netflix’s homepage built with HTML and CSS. Designed to replicate the UI and layout for practice purposes.
-          <a href="https://clone-of-netflix-one.vercel.app/ " style="color:#00ffff; text-decoration: underline;">view project</a>
-        </p>
-      </div>
-      <div class="project-card">
-        <h3>QuickAid</h3>
-        <p>QuickAid is a simple and interactive web app that provides instant first-aid guidance for common emergencies like bleeding, burns, choking, and CPR. It includes a smooth dark mode UI, animations, and a built-in chatbot for quick help.</p>
-        <p>View my project - <a href="https://quick-7g4sr8s8o-suvankar-payras-projects.vercel.app/" style="color:#00ffff; text-decoration: underline;">QuickAid</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p><a href="https://suvancodes.github.io/myportfolio1/" style="color:#00ffff; text-decoration: underline;">Visit Portfolio</a></p>
-      </div>
-    </div>
-  </section>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  <section id="contact" class="contact">
-    <div class="contactstyle">
-      <h2>Contact</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button id="btn" type="submit">Send Message</button>
-        
-      </form>
-    </div>
-  </section>
-  
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-  <footer>
-    <p>© 2025 Suvankar Payra. All rights reserved.</p>
-  </footer>
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-  <script>
-    window.onload = () => {
-      const duration = 2 * 1000;
-      const end = Date.now() + duration;
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px;
+    }
 
-      (function frame() {
-        confetti({ particleCount: 7, angle: 60, spread: 55, origin: { x: 0 } });
-        confetti({ particleCount: 7, angle: 120, spread: 55, origin: { x: 1 } });
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-        if (Date.now() < end) requestAnimationFrame(frame);
-      })();
-    };
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+    }
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2
+    section {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.05rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill {
+      background: #eaeaea;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 15px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
       }
-    );
+    }
+  </style>
+</head>
 
-    document.querySelectorAll('.fade-in-up').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-  <script>
-          let btn = document.getElementById("btn")
-          btn.addEventListener("click" , ()=>{
-            alert("The contact form is currently under development. In the meantime, feel free to reach out to me directly at 6295199077.")
-          })
-          
-  </script>
+<body>
+
+<header>
+  <nav>
+    <div><strong>Suvankar Payra</strong></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Hello, I'm Suvankar</h1>
+  <p>
+    Machine Learning & Data Science undergraduate passionate about building
+    real-world ML applications using Python.
+  </p>
+</section>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Computer Science undergraduate focused on Machine Learning and Data Science.
+    I enjoy working with real datasets, building predictive models, and deploying
+    ML-powered applications for practical use cases.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">NumPy</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">Matplotlib</div>
+    <div class="skill">Seaborn</div>
+    <div class="skill">Scikit-learn</div>
+    <div class="skill">TensorFlow</div>
+    <div class="skill">Keras</div>
+    <div class="skill">Machine Learning</div>
+    <div class="skill">Deep Learning</div>
+    <div class="skill">EDA & Feature Engineering</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Streamlit</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>Bank Loan Approval System</h3>
+      <p>
+        Trained multiple ML models on a Kaggle loan dataset and selected
+        Random Forest after achieving the highest accuracy (82%) for loan
+        approval prediction. Deployed as a web app.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/suvancodes/Bank_Lone_Approval" target="_blank">GitHub</a>
+        <a href="https://bank-lone-approval.vercel.app/" target="_blank">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Customer Retain – Customer Churn Predictor</h3>
+      <p>
+        Built an ANN-based churn prediction model on a Kaggle dataset,
+        achieving 86.4% training accuracy and 84.7% validation accuracy.
+        Deployed using Streamlit.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/suvancodes/CustomerRetain" target="_blank">GitHub</a>
+        <a href="https://customerretain-5c84hbynng3ipalktqmkzp.streamlit.app/" target="_blank">Live Demo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Suvankar Payra</p>
+</footer>
+
 </body>
 </html>
