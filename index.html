@@ -6,139 +6,225 @@
   <title>Suvankar Payra | ML Portfolio</title>
 
   <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #06b6d4;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --card: #ffffff;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", system-ui, sans-serif;
     }
 
     body {
-      color: #222;
-      background: #f9f9f9;
+      background: linear-gradient(180deg, #f8fafc, #eef2ff);
+      color: var(--dark);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
+    /* ---------- HEADER ---------- */
     header {
-      background: #111;
-      color: #fff;
-      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 18px 40px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: #fff;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 20px;
+      list-style: none;
+      gap: 24px;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
+      position: relative;
     }
 
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- HERO ---------- */
     .hero {
-      height: 90vh;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
       padding: 20px;
+      color: white;
+      background: radial-gradient(circle at top, #6366f1, #0f172a);
+      animation: fadeIn 1.2s ease;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
+      animation: slideUp 1s ease;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
+      max-width: 650px;
+      font-size: 1.25rem;
+      opacity: 0.95;
+      animation: slideUp 1.3s ease;
     }
 
+    /* ---------- SECTIONS ---------- */
     section {
-      padding: 60px 40px;
+      padding: 80px 40px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      position: relative;
     }
 
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ---------- ABOUT ---------- */
     .about p {
-      text-align: center;
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
+      text-align: center;
       font-size: 1.05rem;
+      opacity: 0.9;
     }
 
+    /* ---------- SKILLS ---------- */
     .skills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 14px;
     }
 
     .skill {
-      background: #eaeaea;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 0.95rem;
+      background: var(--card);
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .skill:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(79,70,229,0.25);
+    }
+
+    /* ---------- PROJECTS ---------- */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
 
     .project-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      background: var(--card);
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      animation: fadeUp 1s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.15);
     }
 
     .project-card h3 {
       margin-bottom: 10px;
+      color: var(--primary);
     }
 
     .project-card p {
-      margin-bottom: 15px;
       font-size: 0.95rem;
+      margin-bottom: 16px;
     }
 
     .project-links a {
-      display: inline-block;
-      margin-right: 15px;
       text-decoration: none;
-      color: #0066cc;
+      margin-right: 16px;
       font-weight: 600;
+      color: var(--primary);
     }
 
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
-      background: #111;
-      color: #fff;
+      background: #020617;
+      color: #c7d2fe;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 25px;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @media (max-width: 600px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
     }
   </style>
@@ -148,7 +234,7 @@
 
 <header>
   <nav>
-    <div><strong>Suvankar Payra</strong></div>
+    <strong>Suvankar Payra</strong>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -160,8 +246,8 @@
 <section class="hero">
   <h1>Hello, I'm Suvankar</h1>
   <p>
-    Machine Learning & Data Science undergraduate passionate about building
-    real-world ML applications using Python.
+    Machine Learning & Data Science undergraduate building real-world ML
+    applications with Python and deep learning.
   </p>
 </section>
 
@@ -169,13 +255,13 @@
   <h2>About Me</h2>
   <p>
     I am a Computer Science undergraduate focused on Machine Learning and Data Science.
-    I enjoy working with real datasets, building predictive models, and deploying
+    I enjoy working with real datasets, training predictive models, and deploying
     ML-powered applications for practical use cases.
   </p>
 </section>
 
 <section id="skills">
-  <h2>Technical Skills</h2>
+  <h2>Skills</h2>
   <div class="skills">
     <div class="skill">Python</div>
     <div class="skill">NumPy</div>
@@ -201,9 +287,8 @@
     <div class="project-card">
       <h3>Bank Loan Approval System</h3>
       <p>
-        Trained multiple ML models on a Kaggle loan dataset and selected
-        Random Forest after achieving the highest accuracy (82%) for loan
-        approval prediction. Deployed as a web app.
+        Trained multiple ML models on a Kaggle loan dataset and selected Random Forest
+        after achieving the highest accuracy (82%). Deployed as a web app.
       </p>
       <div class="project-links">
         <a href="https://github.com/suvancodes/Bank_Lone_Approval" target="_blank">GitHub</a>
@@ -212,11 +297,10 @@
     </div>
 
     <div class="project-card">
-      <h3>Customer Retain – Customer Churn Predictor</h3>
+      <h3>Customer Retain – Churn Predictor</h3>
       <p>
-        Built an ANN-based churn prediction model on a Kaggle dataset,
-        achieving 86.4% training accuracy and 84.7% validation accuracy.
-        Deployed using Streamlit.
+        Built an ANN-based churn prediction model on a Kaggle dataset, achieving
+        86.4% training accuracy and 84.7% validation accuracy. Deployed using Streamlit.
       </p>
       <div class="project-links">
         <a href="https://github.com/suvancodes/CustomerRetain" target="_blank">GitHub</a>
@@ -228,7 +312,7 @@
 </section>
 
 <footer>
-  <p>© 2026 Suvankar Payra</p>
+  © 2026 Suvankar Payra
 </footer>
 
 </body>
