@@ -6,6 +6,19 @@
   <title>Suvankar Payra | ML Portfolio</title>
 
   <style>
+    :root {
+      --bg1: #070b18;
+      --bg2: #0b1228;
+      --card: #0f1736;
+
+      --cyan: #22d3ee;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --amber: #f59e0b;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,20 +27,20 @@
     }
 
     body {
-      background: linear-gradient(180deg, #0b1220, #0e1628);
-      color: #e6edf3;
+      background: radial-gradient(circle at top, #101a44, var(--bg1));
+      color: var(--text);
       line-height: 1.7;
     }
 
     /* ---------- HEADER ---------- */
     header {
-      padding: 20px 40px;
-      border-bottom: 1px solid #1f2a44;
-      background: rgba(11, 18, 32, 0.9);
-      backdrop-filter: blur(6px);
       position: sticky;
       top: 0;
       z-index: 100;
+      padding: 20px 40px;
+      background: rgba(7, 11, 24, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     nav {
@@ -38,24 +51,26 @@
 
     nav strong {
       font-size: 1.05rem;
-      color: #f8fafc;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     nav a {
-      color: #c9d1d9;
+      margin-left: 24px;
       text-decoration: none;
-      margin-left: 22px;
+      color: var(--muted);
       font-size: 0.95rem;
-      transition: color 0.2s ease;
+      transition: 0.25s;
     }
 
     nav a:hover {
-      color: #7dd3fc;
+      color: var(--cyan);
     }
 
     /* ---------- HERO ---------- */
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -63,19 +78,20 @@
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 14px;
-      color: #f8fafc;
-      letter-spacing: 0.5px;
+      font-size: 3rem;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .typing {
-      font-size: 1.25rem;
-      color: #7dd3fc;
-      height: 32px;
+      font-size: 1.3rem;
+      color: var(--amber);
+      height: 34px;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #7dd3fc;
+      border-right: 2px solid var(--amber);
       animation: blink 1s infinite;
     }
 
@@ -85,22 +101,24 @@
 
     /* ---------- SECTIONS ---------- */
     section {
-      padding: 80px 40px;
+      padding: 90px 40px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      font-size: 1.9rem;
-      margin-bottom: 35px;
-      color: #f1f5f9;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     /* ---------- ABOUT ---------- */
     .about p {
-      max-width: 760px;
+      max-width: 780px;
       font-size: 1.05rem;
-      color: #b6c2d1;
+      color: var(--muted);
     }
 
     /* ---------- SKILLS ---------- */
@@ -111,78 +129,81 @@
     }
 
     .skill {
-      padding: 9px 16px;
+      padding: 10px 18px;
       border-radius: 999px;
       font-size: 0.85rem;
-      background: #111a2e;
-      border: 1px solid #1f2a44;
-      color: #cfe8ff;
+      background:
+        linear-gradient(var(--card), var(--card)) padding-box,
+        linear-gradient(90deg, var(--cyan), var(--violet), var(--pink)) border-box;
+      border: 1px solid transparent;
+      color: #e0f2fe;
       transition: all 0.25s ease;
     }
 
     .skill:hover {
-      background: #16213e;
-      border-color: #7dd3fc;
-      color: #ffffff;
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
     }
 
     /* ---------- PROJECTS ---------- */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
 
     .project {
-      padding: 26px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #0f1a30, #0b1325);
-      border: 1px solid #1f2a44;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+      padding: 28px;
+      border-radius: 16px;
+      background:
+        linear-gradient(var(--card), var(--card)) padding-box,
+        linear-gradient(135deg, var(--violet), var(--cyan), var(--pink)) border-box;
+      border: 1px solid transparent;
+      transition: 0.3s ease;
     }
 
     .project:hover {
-      transform: translateY(-6px);
-      border-color: #7dd3fc;
-      box-shadow: 0 12px 30px rgba(125, 211, 252, 0.15);
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 45px rgba(139, 92, 246, 0.35);
     }
 
     .project h3 {
-      color: #7dd3fc;
       margin-bottom: 12px;
+      color: var(--cyan);
     }
 
     .project p {
       font-size: 0.95rem;
-      color: #b6c2d1;
-      margin-bottom: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
     }
 
     .project a {
       font-size: 0.85rem;
-      color: #93c5fd;
       text-decoration: none;
       margin-right: 18px;
+      color: var(--amber);
+      transition: 0.2s;
     }
 
     .project a:hover {
-      text-decoration: underline;
+      color: var(--pink);
     }
 
     /* ---------- FOOTER ---------- */
     footer {
+      padding: 30px;
       text-align: center;
-      padding: 26px;
       font-size: 0.8rem;
-      color: #9aa6b2;
-      border-top: 1px solid #1f2a44;
-      background: #0b1220;
+      color: var(--muted);
+      border-top: 1px solid rgba(34, 211, 238, 0.3);
+      background: #070b18;
     }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 600px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
       }
     }
   </style>
@@ -202,16 +223,16 @@
 </header>
 
 <section class="hero">
-  <h1>Hi, I'm Suvankar 👋</h1>
+  <h1>Hi, I'm Suvankar</h1>
   <div class="typing" id="typing"></div>
 </section>
 
 <section id="about" class="about">
-  <h2>About</h2>
+  <h2>About Me</h2>
   <p>
-    I am a Computer Science undergraduate focused on Machine Learning and Data Science.
-    I work with real-world datasets, build predictive models, and deploy ML-powered
-    applications using Python.
+    Computer Science undergraduate focused on Machine Learning and Data Science.
+    I enjoy working with real datasets, building predictive models,
+    and deploying ML-powered applications using Python.
   </p>
 </section>
 
@@ -242,8 +263,9 @@
     <div class="project">
       <h3>Bank Loan Approval System</h3>
       <p>
-        Compared multiple ML models on a Kaggle loan dataset and selected Random Forest
-        after achieving the highest accuracy (82%). Deployed as a web app.
+        Compared multiple ML models on a Kaggle loan dataset and selected
+        Random Forest after achieving the highest accuracy (82%).
+        Deployed as a web app.
       </p>
       <a href="https://github.com/suvancodes/Bank_Lone_Approval" target="_blank">GitHub</a>
       <a href="https://bank-lone-approval.vercel.app/" target="_blank">Live Demo</a>
@@ -252,8 +274,9 @@
     <div class="project">
       <h3>Customer Retain – Churn Predictor</h3>
       <p>
-        Built an ANN-based churn prediction model on a Kaggle dataset, achieving
-        86.4% training accuracy and 84.7% validation accuracy. Deployed using Streamlit.
+        Built an ANN-based churn prediction model on a Kaggle dataset,
+        achieving 86.4% training accuracy and 84.7% validation accuracy.
+        Deployed using Streamlit.
       </p>
       <a href="https://github.com/suvancodes/CustomerRetain" target="_blank">GitHub</a>
       <a href="https://customerretain-5c84hbynng3ipalktqmkzp.streamlit.app/" target="_blank">Live Demo</a>
@@ -270,25 +293,24 @@
   const texts = [
     "Machine Learning & Data Science Student",
     "Building ML models with Python",
-    "Looking for ML / Data Internships"
+    "Open to ML / Data Internships"
   ];
 
   let count = 0;
   let index = 0;
 
   function typeEffect() {
-    const current = texts[count];
-    const element = document.getElementById("typing");
+    const el = document.getElementById("typing");
+    const text = texts[count];
 
-    if (index <= current.length) {
-      element.textContent = current.slice(0, index++);
+    if (index <= text.length) {
+      el.textContent = text.slice(0, index++);
     } else {
       setTimeout(() => {
         index = 0;
         count = (count + 1) % texts.length;
-      }, 1500);
+      }, 1600);
     }
-
     setTimeout(typeEffect, 90);
   }
 
