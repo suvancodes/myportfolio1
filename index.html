@@ -1,327 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suvankar Payra | ML Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suvankar Payra | ML Portfolio</title>
 
-  <style>
-    :root {
-      --bg1: #070b18;
-      --card: #0f1736;
+<style>
+:root{
+--bg1:#070b18;--card:#0f1736;
+--cyan:#22d3ee;--violet:#8b5cf6;--pink:#ec4899;--amber:#f59e0b;
+--text:#e5e7eb;--muted:#9ca3af;
+}
 
-      --cyan: #22d3ee;
-      --violet: #8b5cf6;
-      --pink: #ec4899;
-      --amber: #f59e0b;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:JetBrains Mono,monospace;}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "JetBrains Mono", monospace;
-    }
+body{
+background:radial-gradient(circle at top,#101a44,var(--bg1));
+color:var(--text);line-height:1.7;
+}
 
-    body {
-      background: radial-gradient(circle at top, #101a44, var(--bg1));
-      color: var(--text);
-      line-height: 1.7;
-    }
+header{
+position:sticky;top:0;z-index:100;padding:20px 40px;
+background:rgba(7,11,24,.9);backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(139,92,246,.3);
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 20px 40px;
-      background: rgba(7, 11, 24, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
-    }
+nav{display:flex;justify-content:space-between;align-items:center;}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav strong{
+font-size:1.05rem;
+background:linear-gradient(90deg,var(--cyan),var(--violet));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
 
-    nav strong {
-      font-size: 1.05rem;
-      background: linear-gradient(90deg, var(--cyan), var(--violet));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.links a{margin-left:22px;text-decoration:none;color:var(--muted);font-size:.9rem;}
+.links a:hover{color:var(--cyan);}
 
-    nav .links a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-      transition: 0.25s;
-    }
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:0 40px;}
 
-    nav .links a:hover {
-      color: var(--cyan);
-    }
+.hero h1{
+font-size:3rem;margin-bottom:16px;
+background:linear-gradient(90deg,var(--cyan),var(--pink),var(--violet));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 40px;
-    }
+.typing{
+font-size:1.3rem;color:var(--amber);height:34px;
+white-space:nowrap;overflow:hidden;border-right:2px solid var(--amber);
+animation:blink 1s infinite;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 16px;
-      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--violet));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+@keyframes blink{50%{border-color:transparent;}}
 
-    .typing {
-      font-size: 1.3rem;
-      color: var(--amber);
-      height: 34px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid var(--amber);
-      animation: blink 1s infinite;
-    }
+section{padding:90px 40px;max-width:1100px;margin:auto;}
 
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
+h2{
+font-size:2rem;margin-bottom:40px;
+background:linear-gradient(90deg,var(--violet),var(--cyan));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
 
-    section {
-      padding: 90px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.about p{max-width:780px;font-size:1.05rem;color:var(--muted);}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      background: linear-gradient(90deg, var(--violet), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.skills{display:flex;flex-wrap:wrap;gap:14px;}
 
-    .about p {
-      max-width: 780px;
-      font-size: 1.05rem;
-      color: var(--muted);
-    }
+.skill{
+padding:10px 18px;border-radius:999px;font-size:.85rem;
+background:linear-gradient(var(--card),var(--card)) padding-box,
+linear-gradient(90deg,var(--cyan),var(--violet),var(--pink)) border-box;
+border:1px solid transparent;color:#e0f2fe;
+}
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;}
 
-    .skill {
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      background:
-        linear-gradient(var(--card), var(--card)) padding-box,
-        linear-gradient(90deg, var(--cyan), var(--violet), var(--pink)) border-box;
-      border: 1px solid transparent;
-      color: #e0f2fe;
-      transition: all 0.25s ease;
-    }
+.project{
+padding:28px;border-radius:16px;
+background:linear-gradient(var(--card),var(--card)) padding-box,
+linear-gradient(135deg,var(--violet),var(--cyan),var(--pink)) border-box;
+border:1px solid transparent;transition:.3s;
+}
 
-    .skill:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
-    }
+.project:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(139,92,246,.35);}
+.project h3{color:var(--cyan);margin-bottom:10px;}
+.project p{color:var(--muted);margin-bottom:14px;font-size:.95rem;}
+.project a{color:var(--amber);text-decoration:none;margin-right:15px;}
+.project a:hover{color:var(--pink);}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
+footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(34,211,238,.3);}
 
-    .project {
-      padding: 28px;
-      border-radius: 16px;
-      background:
-        linear-gradient(var(--card), var(--card)) padding-box,
-        linear-gradient(135deg, var(--violet), var(--cyan), var(--pink)) border-box;
-      border: 1px solid transparent;
-      transition: 0.3s ease;
-    }
+footer a{color:var(--cyan);margin:0 10px;text-decoration:none;}
 
-    .project:hover {
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: 0 20px 45px rgba(139, 92, 246, 0.35);
-    }
-
-    .project h3 {
-      margin-bottom: 12px;
-      color: var(--cyan);
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .project a {
-      font-size: 0.85rem;
-      text-decoration: none;
-      margin-right: 18px;
-      color: var(--amber);
-    }
-
-    .project a:hover {
-      color: var(--pink);
-    }
-
-    footer {
-      padding: 30px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid rgba(34, 211, 238, 0.3);
-      background: #070b18;
-    }
-
-    footer a {
-      color: var(--cyan);
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 0.85rem;
-    }
-
-    footer a:hover {
-      color: var(--pink);
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-    }
-  </style>
+@media(max-width:600px){.hero h1{font-size:2.3rem;}}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <strong>Suvankar Payra</strong>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="https://github.com/suvancodes" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.geeksforgeeks.org/user/Suvankar_4_0_4Error/" target="_blank" rel="noopener noreferrer">GeeksforGeeks</a>
-      <a href="https://www.linkedin.com/in/suvankarpayra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-  </nav>
+<nav>
+<strong>Suvankar Payra</strong>
+<div class="links">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="https://github.com/suvancodes" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/suvankarpayra/" target="_blank">LinkedIn</a>
+</div>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Hi, I'm Suvankar</h1>
-  <div class="typing" id="typing"></div>
+<h1>Hi, I'm Suvankar</h1>
+<div class="typing" id="typing"></div>
 </section>
 
 <section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    Computer Science undergraduate focused on Machine Learning and Data Science.
-    I enjoy working with real datasets, building predictive models,
-    and deploying ML-powered applications using Python.
-  </p>
+<h2>About Me</h2>
+<p>
+Computer Science undergraduate specializing in Machine Learning and Data Science.
+Experienced in building ML models, performing EDA, and deploying data-driven applications.
+</p>
 </section>
 
 <section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill">Python</div>
-    <div class="skill">NumPy</div>
-    <div class="skill">Pandas</div>
-    <div class="skill">Matplotlib</div>
-    <div class="skill">Seaborn</div>
-    <div class="skill">Scikit-learn</div>
-    <div class="skill">TensorFlow</div>
-    <div class="skill">Keras</div>
-    <div class="skill">Machine Learning</div>
-    <div class="skill">Deep Learning</div>
-    <div class="skill">EDA & Feature Engineering</div>
-    <div class="skill">Git & GitHub</div>
-    <div class="skill">Streamlit</div>
-  </div>
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">Python</div><div class="skill">Pandas</div><div class="skill">NumPy</div>
+<div class="skill">Matplotlib</div><div class="skill">Seaborn</div>
+<div class="skill">Scikit-learn</div><div class="skill">TensorFlow</div>
+<div class="skill">Deep Learning</div><div class="skill">EDA</div>
+<div class="skill">Streamlit</div><div class="skill">GitHub</div>
+</div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+<h2>Projects</h2>
 
-  <div class="projects">
+<div class="projects">
 
-    <div class="project">
-      <h3>Bank Loan Approval System</h3>
-      <p>
-        Compared multiple ML models on a Kaggle loan dataset and selected
-        Random Forest after achieving the highest accuracy (82%).
-        Deployed as a web app.
-      </p>
-      <a href="https://github.com/suvancodes/Bank_Lone_Approval" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://bank-lone-approval.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-    </div>
+<div class="project">
+<h3>Bank Loan Approval System</h3>
+<p>Random Forest based loan prediction system with 82% accuracy deployed as web app.</p>
+<a href="https://github.com/suvancodes/Bank_Lone_Approval">GitHub</a>
+<a href="https://bank-lone-approval.vercel.app/">Live</a>
+</div>
 
-    <div class="project">
-      <h3>Customer Retain – Churn Predictor</h3>
-      <p>
-        Built an ANN-based churn prediction model on a Kaggle dataset,
-        achieving 86.4% training accuracy and 84.7% validation accuracy.
-        Deployed using Streamlit.
-      </p>
-      <a href="https://github.com/suvancodes/CustomerRetain" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://customerretain-5c84hbynng3ipalktqmkzp.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-    </div>
+<div class="project">
+<h3>Customer Churn Predictor</h3>
+<p>ANN model predicting churn with Streamlit deployment.</p>
+<a href="https://github.com/suvancodes/CustomerRetain">GitHub</a>
+</div>
 
-  </div>
+<div class="project">
+<h3>Analyzing Netflix Trends</h3>
+<p>EDA project analyzing content trends using Pandas, Matplotlib & Seaborn.</p>
+<a href="https://github.com/suvancodes/Analyzing-Netflix-Trends">GitHub</a>
+</div>
+
+<div class="project">
+<h3>Weather App</h3>
+<p>Responsive JS weather app with real-time API & 5-day forecast.</p>
+<a href="https://github.com/suvancodes/My_Weather_App">GitHub</a>
+<a href="https://my-weather-app-seven-olive.vercel.app/">Live</a>
+</div>
+
+<div class="project">
+<h3>Sales Data Analysis</h3>
+<p>Business KPI & revenue trend analysis with feature engineering.</p>
+<a href="https://github.com/suvancodes/Comprehensive-Sales-Data-Analysis">GitHub</a>
+</div>
+
+</div>
 </section>
 
 <footer>
-  © 2026 Suvankar Payra |
-  <a href="https://github.com/suvancodes" target="_blank" rel="noopener noreferrer">GitHub</a>
-  <a href="https://www.geeksforgeeks.org/user/Suvankar_4_0_4Error/" target="_blank" rel="noopener noreferrer">GeeksforGeeks</a>
-  <a href="https://www.linkedin.com/in/suvankarpayra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+© 2026 Suvankar Payra |
+<a href="https://github.com/suvancodes">GitHub</a>
+<a href="https://www.linkedin.com/in/suvankarpayra/">LinkedIn</a>
 </footer>
 
 <script>
-  const texts = [
-    "Machine Learning & Data Science Student",
-    "Building ML models with Python",
-    "Open to ML / Data Internships"
-  ];
-
-  let count = 0;
-  let index = 0;
-
-  function typeEffect() {
-    const el = document.getElementById("typing");
-    const text = texts[count];
-
-    if (index <= text.length) {
-      el.textContent = text.slice(0, index++);
-    } else {
-      setTimeout(() => {
-        index = 0;
-        count = (count + 1) % texts.length;
-      }, 1600);
-    }
-    setTimeout(typeEffect, 90);
-  }
-
-  typeEffect();
+const texts=[
+"Machine Learning & Data Science Student",
+"Building ML models with Python",
+"Open to Internships"
+];
+let c=0,i=0;
+function type(){
+const el=document.getElementById("typing");
+if(i<=texts[c].length){el.textContent=texts[c].slice(0,i++);}
+else{setTimeout(()=>{i=0;c=(c+1)%texts.length;},1200);}
+setTimeout(type,90);
+}
+type();
 </script>
 
 </body>
