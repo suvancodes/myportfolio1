@@ -87,7 +87,6 @@ border:1px solid transparent;transition:.3s;
 .project a:hover{color:var(--pink);}
 
 footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(34,211,238,.3);}
-
 footer a{color:var(--cyan);margin:0 10px;text-decoration:none;}
 
 @media(max-width:600px){.hero h1{font-size:2.3rem;}}
@@ -117,19 +116,28 @@ footer a{color:var(--cyan);margin:0 10px;text-decoration:none;}
 <section id="about" class="about">
 <h2>About Me</h2>
 <p>
-Computer Science undergraduate specializing in Machine Learning and Data Science.
-Experienced in building ML models, performing EDA, and deploying data-driven applications.
+Computer Science undergraduate specializing in Machine Learning & Data Science.
+Hands-on experience building ML models, performing EDA, computing business KPIs, and creating analytics pipelines using Python.
+Actively seeking Data Analyst / ML Internship roles.
 </p>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
-<div class="skill">Python</div><div class="skill">Pandas</div><div class="skill">NumPy</div>
-<div class="skill">Matplotlib</div><div class="skill">Seaborn</div>
-<div class="skill">Scikit-learn</div><div class="skill">TensorFlow</div>
-<div class="skill">Deep Learning</div><div class="skill">EDA</div>
-<div class="skill">Streamlit</div><div class="skill">GitHub</div>
+<div class="skill">Python</div>
+<div class="skill">Pandas</div>
+<div class="skill">NumPy</div>
+<div class="skill">Matplotlib</div>
+<div class="skill">Seaborn</div>
+<div class="skill">Scikit-learn</div>
+<div class="skill">TensorFlow</div>
+<div class="skill">EDA</div>
+<div class="skill">Feature Engineering</div>
+<div class="skill">Business KPIs</div>
+<div class="skill">Streamlit</div>
+<div class="skill">SQL</div>
+<div class="skill">GitHub</div>
 </div>
 </section>
 
@@ -137,6 +145,14 @@ Experienced in building ML models, performing EDA, and deploying data-driven app
 <h2>Projects</h2>
 
 <div class="projects">
+
+<div class="project">
+<h3>Sales & Product Performance Analytics</h3>
+<p>
+End-to-end analytics pipeline using Python & SQL to compute business KPIs, product contribution, trend analysis and dashboard-ready outputs.
+</p>
+<a href="https://github.com/suvancodes/Sales-Product-Performance-Analytics" target="_blank">GitHub</a>
+</div>
 
 <div class="project">
 <h3>Bank Loan Approval System</h3>
@@ -149,7 +165,7 @@ Experienced in building ML models, performing EDA, and deploying data-driven app
 <h3>Customer Churn Predictor</h3>
 <p>ANN model predicting churn with Streamlit deployment.</p>
 <a href="https://github.com/suvancodes/CustomerRetain">GitHub</a>
-  <a href="https://customerretain-5c84hbynng3ipalktqmkzp.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+<a href="https://customerretain-5c84hbynng3ipalktqmkzp.streamlit.app/">Live</a>
 </div>
 
 <div class="project">
@@ -165,12 +181,6 @@ Experienced in building ML models, performing EDA, and deploying data-driven app
 <a href="https://my-weather-app-seven-olive.vercel.app/">Live</a>
 </div>
 
-<div class="project">
-<h3>Sales Data Analysis</h3>
-<p>Business KPI & revenue trend analysis with feature engineering.</p>
-<a href="https://github.com/suvancodes/Comprehensive-Sales-Data-Analysis">GitHub</a>
-</div>
-
 </div>
 </section>
 
@@ -183,10 +193,12 @@ Experienced in building ML models, performing EDA, and deploying data-driven app
 <script>
 const texts=[
 "Machine Learning & Data Science Student",
-"Building ML models with Python",
+"Building Analytics Pipelines with Python",
 "Open to Internships"
 ];
+
 let c=0,i=0;
+
 function type(){
 const el=document.getElementById("typing");
 if(i<=texts[c].length){el.textContent=texts[c].slice(0,i++);}
