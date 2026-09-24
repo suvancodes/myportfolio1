@@ -392,7 +392,93 @@ font-size:.9rem;
 .certification-card a:hover{
 color:var(--pink);
 }
+/* =========================
+   CERTIFICATIONS & RESUMES
+========================= */
 
+.documents-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.document-card{
+padding:20px;
+border-radius:14px;
+
+background:
+linear-gradient(var(--card),var(--card)) padding-box,
+linear-gradient(135deg,var(--violet),var(--cyan),var(--pink)) border-box;
+
+border:1px solid transparent;
+transition:.3s;
+}
+
+.document-card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(139,92,246,.25);
+}
+
+.document-card h3{
+color:var(--cyan);
+font-size:1rem;
+margin-bottom:5px;
+}
+
+.document-card p{
+color:var(--muted);
+font-size:.78rem;
+margin-bottom:12px;
+}
+
+/* Small PDF preview */
+.pdf-preview{
+width:100%;
+height:180px;
+border:none;
+border-radius:8px;
+background:#fff;
+margin-bottom:12px;
+}
+
+.document-links{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.document-links a{
+color:var(--amber);
+text-decoration:none;
+font-size:.78rem;
+padding:5px 10px;
+border:1px solid rgba(245,158,11,.4);
+border-radius:6px;
+transition:.3s;
+}
+
+.document-links a:hover{
+color:var(--pink);
+border-color:var(--pink);
+}
+
+/* Resume cards slightly compact */
+.resume-card{
+min-height:270px;
+}
+
+/* Mobile */
+@media(max-width:700px){
+
+.documents-grid{
+grid-template-columns:1fr;
+}
+
+.pdf-preview{
+height:200px;
+}
+
+}
 
 /* =========================
    MOBILE
@@ -455,13 +541,6 @@ section{padding:70px 20px;}
 
 <div class="typing" id="typing"></div>
 
-</div>
-
-<img
-class="profile-image"
-src="https://avatars.githubusercontent.com/u/186396761?v=4"
-alt="Suvankar Payra - GitHub Profile"
->
 
 </div>
 
@@ -566,19 +645,25 @@ GeeksforGeeks Campus Body – Kazi Nazrul University · Part-time
 
 <h2>Certifications</h2>
 
-<div class="certification-grid">
+<div class="documents-grid">
 
-<div class="certification-card">
+<div class="document-card">
 
-<h3>Machine Learning Certificate</h3>
+<h3>Machine Learning</h3>
 
 <p>
-Certification demonstrating knowledge of Machine Learning concepts,
-model development, and practical ML techniques.
+Machine Learning certification
 </p>
+
+<iframe
+class="pdf-preview"
+src="ml-certificate.pdf">
+</iframe>
+
+<div class="document-links">
 
 <a href="ml-certificate.pdf" target="_blank">
-View Certificate
+Open PDF
 </a>
 
 <a href="https://drive.google.com/drive/u/0/folders/18CzAs_3N1qCqy_t6nVAFvH1qZmWEhCFJ"
@@ -588,18 +673,26 @@ Drive
 
 </div>
 
+</div>
 
-<div class="certification-card">
 
-<h3>SQL Certificate</h3>
+<div class="document-card">
+
+<h3>SQL</h3>
 
 <p>
-Certification demonstrating practical SQL knowledge including
-querying, filtering, aggregation, and relational data analysis.
+SQL certification
 </p>
+
+<iframe
+class="pdf-preview"
+src="sql_certificate.pdf">
+</iframe>
+
+<div class="document-links">
 
 <a href="sql_certificate.pdf" target="_blank">
-View Certificate
+Open PDF
 </a>
 
 <a href="https://drive.google.com/drive/u/0/folders/18CzAs_3N1qCqy_t6nVAFvH1qZmWEhCFJ"
@@ -609,26 +702,35 @@ Drive
 
 </div>
 
+</div>
 
-<div class="certification-card">
 
-<h3>Excel Certificate</h3>
+<div class="document-card">
+
+<h3>Excel</h3>
 
 <p>
-Certification supporting spreadsheet-based data analysis,
-reporting, and business analytics skills.
+Microsoft Excel certification
 </p>
 
+<iframe
+class="pdf-preview"
+src="Excel-certificate.pdf">
+</iframe>
+
+<div class="document-links">
+
 <a href="Excel-certificate.pdf" target="_blank">
-View Certificate
+Open PDF
 </a>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-
 <section id="resumes">
 
 <h2>Resumes</h2>
