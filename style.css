@@ -1186,3 +1186,118 @@ footer {
     padding: 50px 20px;
   }
 }
+/* =========================
+   RESUMES
+   ========================= */
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.resume-card {
+  position: relative;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.resume-card:hover {
+  transform: translateY(-5px);
+  border-color: #334155;
+  box-shadow: var(--shadow);
+}
+
+.resume-number {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  color: #526176;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.resume-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--accent-bg);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+
+  font-size: 1.35rem;
+}
+
+.resume-card h3 {
+  margin-top: 22px;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.resume-card > p {
+  margin-top: 10px;
+  min-height: 72px;
+
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.resume-tags span {
+  padding: 5px 8px;
+
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  background: var(--surface-2);
+  color: var(--text-soft);
+
+  font-size: 0.65rem;
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.resume-actions .btn {
+  font-size: 0.76rem;
+}
+
+.resume-download {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.resume-download:hover {
+  color: var(--accent-soft);
+}
+
+
+/* Resume mobile */
+
+@media (max-width: 900px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-card > p {
+    min-height: auto;
+  }
+}
