@@ -1187,7 +1187,7 @@ footer {
   }
 }
 /* =========================
-   RESUMES
+   RESUME SECTION
    ========================= */
 
 .resume-grid {
@@ -1202,7 +1202,10 @@ footer {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
   overflow: hidden;
 }
 
@@ -1212,66 +1215,89 @@ footer {
   box-shadow: var(--shadow);
 }
 
+/* Number in top-right */
+
 .resume-number {
   position: absolute;
   top: 22px;
   right: 24px;
+
   color: #526176;
   font-size: 0.68rem;
   font-weight: 800;
+  letter-spacing: 0.08em;
 }
+
+/* Resume icon */
 
 .resume-icon {
   width: 52px;
   height: 52px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 12px;
+
   background: var(--accent-bg);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.20);
 
   font-size: 1.35rem;
 }
 
+/* Title */
+
 .resume-card h3 {
   margin-top: 22px;
+
   font-size: 1.15rem;
+  line-height: 1.3;
   letter-spacing: -0.02em;
 }
 
+/* Description */
+
 .resume-card > p {
   margin-top: 10px;
+
   min-height: 72px;
 
   color: var(--muted);
   font-size: 0.82rem;
+  line-height: 1.65;
 }
+
+/* Tags */
 
 .resume-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
+
   margin-top: 18px;
 }
 
 .resume-tags span {
-  padding: 5px 8px;
+  padding: 5px 9px;
 
   border: 1px solid var(--border);
   border-radius: 5px;
 
   background: var(--surface-2);
+
   color: var(--text-soft);
 
   font-size: 0.65rem;
 }
 
+/* Buttons */
+
 .resume-actions {
   display: flex;
   align-items: center;
   gap: 15px;
+
   margin-top: 24px;
 }
 
@@ -1283,6 +1309,8 @@ footer {
   color: var(--muted);
   font-size: 0.75rem;
   font-weight: 650;
+
+  transition: color 0.2s ease;
 }
 
 .resume-download:hover {
@@ -1290,9 +1318,20 @@ footer {
 }
 
 
-/* Resume mobile */
+/* =========================
+   RESUME RESPONSIVE
+   ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
+
+  .resume-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 650px) {
+
   .resume-grid {
     grid-template-columns: 1fr;
   }
@@ -1300,4 +1339,5 @@ footer {
   .resume-card > p {
     min-height: auto;
   }
+
 }
