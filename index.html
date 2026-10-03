@@ -18,9 +18,15 @@
       .
      </span>
     </a>
-    <button aria-label="Toggle navigation" class="menu-toggle" id="menuToggle">
-     ☰
-    </button>
+    <div class="nav-controls">
+     <button aria-label="Toggle dark and light theme" aria-pressed="false" class="theme-toggle" id="themeToggle" type="button">
+      <span class="theme-icon" id="themeIcon">☾</span>
+      <span class="theme-label" id="themeLabel">Dark</span>
+     </button>
+     <button aria-label="Toggle navigation" class="menu-toggle" id="menuToggle">
+      ☰
+     </button>
+    </div>
     <nav id="navMenu">
      <a href="#about">
       About
@@ -1054,7 +1060,37 @@
    </div>
   </footer>
   <script>
-   const menuToggle = document.getElementById("menuToggle");
+   const root = document.documentElement;
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const themeLabel = document.getElementById("themeLabel");
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const initialTheme = savedTheme || "light";
+    body.dataset.theme = initialTheme;
+
+    function updateThemeUI(theme) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to bright theme" : "Switch to dark theme"
+      );
+      themeIcon.textContent = isDark ? "☀" : "☾";
+      themeLabel.textContent = isDark ? "Light" : "Dark";
+    }
+
+    updateThemeUI(initialTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = body.dataset.theme === "dark" ? "light" : "dark";
+      body.dataset.theme = nextTheme;
+      localStorage.setItem("portfolio-theme", nextTheme);
+      updateThemeUI(nextTheme);
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
 
     menuToggle.addEventListener("click", () => {
