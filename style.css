@@ -386,8 +386,7 @@ nav a:hover {
 
 .project-card.featured {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
 }
 
 .project-visual {
@@ -503,204 +502,6 @@ nav a:hover {
 
 .project-links a:hover {
   color: var(--accent-soft);
-}
-
-/* PROJECT VISUALS */
-
-.dashboard-window {
-  width: 100%;
-  max-width: 440px;
-  border: 1px solid #2b374a;
-  border-radius: 10px;
-  background: #0a0f17;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0,0,0,.35);
-}
-
-.window-top {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding-left: 11px;
-  border-bottom: 1px solid #1c2635;
-}
-
-.window-top span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #334155;
-}
-
-.dashboard-grid {
-  padding: 15px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 9px;
-}
-
-.metric-box {
-  padding: 12px;
-  border: 1px solid #1c2737;
-  border-radius: 6px;
-  background: #0e1520;
-}
-
-.metric-box small {
-  color: #64748b;
-  display: block;
-  font-size: 0.55rem;
-}
-
-.metric-box b {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.85rem;
-}
-
-.chart-box {
-  height: 130px;
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: end;
-  gap: 12px;
-  padding: 20px;
-  border: 1px solid #1c2737;
-  border-radius: 6px;
-}
-
-.chart-box i {
-  flex: 1;
-  background: #3b82f6;
-  opacity: 0.7;
-  border-radius: 3px 3px 0 0;
-}
-
-.chart-box i:nth-child(1) { height: 35%; }
-.chart-box i:nth-child(2) { height: 50%; }
-.chart-box i:nth-child(3) { height: 42%; }
-.chart-box i:nth-child(4) { height: 68%; }
-.chart-box i:nth-child(5) { height: 57%; }
-.chart-box i:nth-child(6) { height: 82%; }
-.chart-box i:nth-child(7) { height: 72%; }
-
-.fraud-visual,
-.security-visual,
-.flood-visual {
-  min-height: 260px;
-}
-
-.terminal-card {
-  width: 90%;
-  padding: 24px;
-  border-radius: 9px;
-  border: 1px solid #273246;
-  background: #080d14;
-  font-family: "SFMono-Regular", Consolas, monospace;
-}
-
-.terminal-title {
-  color: #94a3b8;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #1d2735;
-  font-size: 0.7rem;
-}
-
-.terminal-line {
-  margin-top: 25px;
-  color: #cbd5e1;
-  font-size: 0.72rem;
-}
-
-.terminal-line span {
-  color: #60a5fa;
-}
-
-.terminal-result {
-  margin-top: 15px;
-  color: #4ade80;
-  font-size: 0.72rem;
-}
-
-.terminal-confidence {
-  margin-top: 5px;
-  color: #64748b;
-  font-size: 0.65rem;
-}
-
-.security-visual {
-  display: flex;
-  gap: 25px;
-  flex-direction: column;
-}
-
-.shield-icon {
-  width: 95px;
-  height: 95px;
-  border-radius: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(34,197,94,.08);
-  border: 1px solid rgba(34,197,94,.25);
-  color: #4ade80;
-  font-size: 3rem;
-}
-
-.security-lines {
-  display: flex;
-  flex-direction: column;
-}
-
-.security-lines span {
-  color: #64748b;
-  font-size: 0.62rem;
-  letter-spacing: 0.13em;
-}
-
-.security-lines strong {
-  margin-top: 4px;
-  color: #4ade80;
-  font-size: 1.25rem;
-}
-
-.security-lines small {
-  color: #64748b;
-  margin-top: 2px;
-}
-
-.flood-chart {
-  height: 140px;
-  width: 80%;
-  display: flex;
-  align-items: end;
-  gap: 13px;
-  padding: 20px;
-  border-bottom: 1px solid #293548;
-}
-
-.flood-chart .bar {
-  flex: 1;
-  background: #3b82f6;
-  opacity: 0.75;
-  border-radius: 4px 4px 0 0;
-}
-
-.b1 { height: 28%; }
-.b2 { height: 48%; }
-.b3 { height: 38%; }
-.b4 { height: 74%; }
-.b5 { height: 91%; }
-
-.flood-visual {
-  flex-direction: column;
-}
-
-.flood-visual > span {
-  color: #64748b;
-  font-size: 0.63rem;
-  letter-spacing: 0.12em;
 }
 
 /* COMPACT PROJECTS */
@@ -1055,12 +856,6 @@ footer {
 
   .project-card.featured {
     grid-column: auto;
-    grid-template-columns: 1fr;
-  }
-
-  .project-visual {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
   }
 
   .cert-grid {
@@ -1159,11 +954,6 @@ footer {
 
   .hero-text {
     font-size: .95rem;
-  }
-
-  .project-visual {
-    min-height: 220px;
-    padding: 20px;
   }
 
   .project-body {
