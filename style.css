@@ -1232,3 +1232,174 @@ nav a,
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* ================================
+   LIGHT / DARK THEME SYSTEM
+   ================================ */
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.navbar,
+.project-card,
+.focus-card,
+.timeline-content,
+.education-card,
+.cert-card,
+.resume-card,
+.contact-box,
+.profile-ring,
+.metrics,
+.tags span,
+.resume-tags span,
+.btn-secondary {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  min-height: 38px;
+  padding: 7px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-2);
+  border-color: var(--border-light);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.theme-label {
+  line-height: 1;
+}
+
+@media (max-width: 650px) {
+  .theme-label {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    padding: 7px;
+  }
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+  --bg: #080B12;
+  --surface: #0D111A;
+  --surface-2: #111722;
+  --surface-3: #151C29;
+
+  --border: #202938;
+  --border-light: #334155;
+
+  --text: #F1F5F9;
+  --text-soft: #CBD5E1;
+  --muted: #8995A7;
+
+  --accent: #3B82F6;
+  --accent-soft: #60A5FA;
+  --accent-bg: rgba(59, 130, 246, 0.10);
+
+  --success: #22C55E;
+  --success-bg: rgba(34, 197, 94, 0.10);
+
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.20);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+body[data-theme="dark"] {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.09), transparent 28%),
+    var(--bg);
+}
+
+body[data-theme="dark"] .navbar {
+  background: rgba(8, 11, 18, 0.88);
+}
+
+body[data-theme="dark"] .btn-primary {
+  color: #FFFFFF;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+body[data-theme="dark"] .btn-primary:hover {
+  background: #2563EB;
+}
+
+body[data-theme="dark"] .profile-ring {
+  background: linear-gradient(145deg, rgba(59,130,246,.55), transparent 55%);
+}
+
+body[data-theme="dark"] .metrics {
+  background: var(--surface-2);
+}
+
+body[data-theme="dark"] .profile-placeholder {
+  background: var(--surface);
+}
+
+body[data-theme="dark"] .skill-index,
+body[data-theme="dark"] .resume-number,
+body[data-theme="dark"] .cert-card > span {
+  color: #94A3B8;
+}
+
+body[data-theme="dark"] .mobile-nav,
+body[data-theme="dark"] nav.open {
+  background: rgba(8, 11, 18, 0.98);
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: var(--surface);
+  color: var(--text-soft);
+}
+
+body[data-theme="dark"] .theme-toggle:hover {
+  background: var(--surface-2);
+}
+
+body[data-theme="dark"] .btn-secondary {
+  color: var(--text-soft);
+  background: var(--surface);
+  border-color: var(--border-light);
+}
+
+body[data-theme="dark"] .btn-secondary:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
